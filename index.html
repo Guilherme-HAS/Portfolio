@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- importando favIcons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="imagens/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-
-</head>
-<body>
-    <div class="container">
-        <header>
-            <div class="img-wrapper">
-                <img src="imagens/Bg.jpg" alt=""> </img>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfólio</title>
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- importando favIcons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="imagens/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        
+    </head>
+    <body>
+        <div class="container">
+            
+            <!-- //menu Hamburguer -->
+            <div class="hamburguer">
+                <div id="line1"class="line"></div>
+                <div id="line2"class="line"></div>
+                <div id="line2"class="line"></div>
             </div>
 
-            <div class="banner">
-                <h1>Tecnico de Jogos & </h1>
-                <h1>Desenvolvedor Web</h1>
-                <p>Guilherme Henrique</p>
-                <button>Saiba mais</button>
+            <header>
+                <div class="img-wrapper">
+                    <img src="imagens/Bg.jpg" alt=""> </img>
+                </div>
+                <div class="banner">
+                    <h1>Tecnico de Jogos & </h1>
+                    <h1>Desenvolvedor Web</h1>
+                    <p>Guilherme Henrique</p>
+                    <button>Saiba mais</button>
+                </div>  
+            </header>
+            <!-- //Lista de navegação (sidebar) -->
+            <div class="sidebar">
+                <nav>
+                    <ul class="menu">
+                        <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+                        <li class="menu-item"><a href="#" class="menu-link">Conhecimento</a></li>
+                        <li class="menu-item"><a href="#" class="menu-link">Projeto</a></li>
+                        <li class="menu-item"><a href="#" class="menu-link">Contato</a></li>
+                        <li class="menu-item"><a href="#" class="menu-link">Experiencia(Ideia)</a></li>
+                    </ul>
+                </nav>
+                <!-- //Usando incones do Font Awesome -->
+                <div class="midias-sociais">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div> 
             </div>
-
-        </header>
     </div>
 </body>
 
-
+<!-- Deixar o script carregando na ultima linha do html é uma boa pratica, tanto para o site rodar mais rapido, e rodar oque for necessario primeiro -->
+<script src="script.js"></script> 
 </html>

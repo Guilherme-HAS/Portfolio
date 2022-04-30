@@ -1,20 +1,54 @@
+/*Para lembrar Sempre(O tipo de medida REM usa o tamanho da fonte do <html> )*/
 
 /*Importando fontes do google fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,awght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,awght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap");
 
 /*Importanto caracteres e simbolos especiais*/
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
 
-*{
+/*Todos elementos desta pagina vai receber essas ordens (se nao quiser, pode mudar em alguma outra parte do codigo)*/
+*{  
     margin: 0;
     padding: 0;
+    list-style: none; /*Tirando todos os pontos de todos LI(Itens de Lista)*/
+    text-decoration: none; /*Para tirar o sublinhado dos links da pagina*/
+
 }
+
+.hamburguer{
+    
+    width:2rem;/*Definindo o tamanho*/
+    height:2rem;
+    position:fixed; /*Pra deixar o Menu sempre fixo no mesmo lugar, independente de onde esteja a rolagem*/
+    z-index:100; /*Pra deixar o Menu sempre a frente de qualquer elemento, alterando o eixo Z dele*/
+    right: 2rem; /*Definindo aonde vai ficar*/
+    top:2rem;
+    cursor:pointer;
+
+    /*Parte que tive dificuldade pra entender, mas funciona pra separar as linhas dentro do menu hamburguer*/
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.hamburguer.show-menu{
+    right:18rem;
+}
+
+.line{
+    width:100%; /*vai ocupar todo o espaço do elemento pai(no caso o menu hamburguer)*/
+    height:.1rem;
+    background-color: white;
+    box-shadow:0.1rem 0.1rem 1px #000;/*preciso da sombra, pra quando tiver em uma parte da tela branca ser visivel*/
+    /*1º Parametro: Deslocamento do eixo X, 2ºParametro:Deslocamento do eixo y*,3ºParametro:Quanto irei Borrar*/
+}
+
 
 header{
     width: 100%;
     height: 100vh; /*vh, para visualização ser do tamanho da tela(se adequando a todo modelo)*/
-    overflow: hidden; /*pra nao rolar, barra de rolagem pra os lados*/
+    overflow: hidden; /*pra nao ter, barra de rolagem pra os lados*/
     position: relative; 
     /*para conseguir alterar a classe banner, para qualquer posiçã (para usar o position: absolute preciso estar dentro de um position: relative)*/
 }
@@ -128,3 +162,89 @@ header{
     }
 }
 
+.sidebar{
+   width: 20rem; /*definindo tamanho*/
+   height: 100vh;
+   background-color: #fff; /*definindo cor*/
+   position: fixed;
+   top: 0; /*definindo aonde vai ficar*/
+   right: -20rem; /*quando começar vai esta fora da tela*/
+   transition: all 1s; /*quando abrir ou fehcar menu, adiciona uma transição de 1 seg*/
+}
+.sidebar.show-menu{
+    right: 0; /*quando classe sidebar, tb tiver classe show-menu volta pra tela*/
+}
+
+.menu{ /*Div : menu*/
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);/*Organizando os itens exatamente ao meio, tanto em relacao ao eixo X,e Y*/
+}
+
+.menu-item{ /*Li : menu-item*/
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.menu-link{ /*Para formatar os links em si*/
+    font-family: "Muly", serif;
+    font-size: 1.5rem;
+    color: #555;
+    transition: color 1s; /*sempre que mudar a cor da fonte aplica a transição de 1seg */
+}
+
+.menu-link:hover{ /*Quem estiver em menu-link e sofrer o evento hover (Quando o mause passar por cima)*/
+    color: #6f0000
+}
+
+.midias-sociais{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display:flex; /*Distribuir os incones pela linha */
+    justify-content: space-evenly; /*Uniformizar as distribuiçoes*/   
+}
+
+.midias-sociais i{
+    background-color: #6f0000;
+    color: rgba(255,255,255,0.8);
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2.5em; /*Como o incone é uma fonte, aumento ele aumentando o tamanho da*/
+    border-radius: 50%;
+    
+    /*Para posicionar os itens no centro*/
+    display:flex;
+    justify-content: center;
+
+    transition: background-color 1s; /*sempre que mudar a cor da fonte aplica a transição de 1seg */
+
+    }
+
+.midias-sociais i:hover{ /*sempre que o mause estiver em cima, ira mudar a cor do background*/
+    background-color:#9b0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ Erros com as fontes do google fonts, importante ver depois : https://www.youtube.com/watch?v=zeOsssqp6uc
+ Min : (20:50)
+
+
+ Erro na parte do menu, tirar segunda linha do hamburguer, colocar o hamburguer pra acompanhar.
+  https://www.youtube.com/watch?v=zeOsssqp6uc   Min : (35:00)
+*/
