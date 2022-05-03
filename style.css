@@ -1,7 +1,7 @@
 /*Para lembrar Sempre(O tipo de medida REM usa o tamanho da fonte do <html> )*/
 
 /*Importando fontes do google fonts*/
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,awght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap');
 
 /*Importanto caracteres e simbolos especiais*/
 
@@ -23,6 +23,7 @@
     position:fixed; /*Pra deixar o Menu sempre fixo no mesmo lugar, independente de onde esteja a rolagem*/
     z-index:100; /*Pra deixar o Menu sempre a frente de qualquer elemento, alterando o eixo Z dele*/
     right: 2rem; /*Definindo aonde vai ficar*/
+    transition: all 1.5s; /*tudo vai receber uma transição de 1.5 sec*/
     top:2rem;
     cursor:pointer;
 
@@ -32,18 +33,70 @@
     justify-content: space-evenly;
 }
 
-.hamburguer.show-menu{
-    right:18rem;
+.show-menu .hamburguer{
+    right: 16rem;
 }
 
 .line{
     width:100%; /*vai ocupar todo o espaço do elemento pai(no caso o menu hamburguer)*/
     height:.1rem;
-    background-color: white;
-    box-shadow:0.1rem 0.1rem 1px #000;/*preciso da sombra, pra quando tiver em uma parte da tela branca ser visivel*/
+
+    /*preciso da sombra, pra quando tiver em uma parte da tela branca ser visivel*/
     /*1º Parametro: Deslocamento do eixo X, 2ºParametro:Deslocamento do eixo y*,3ºParametro:Quanto irei Borrar*/
+    box-shadow:0.1rem 0.1rem 1px #000;
+
+    background-color: white;
+
+    transition: transform 1.5s; /* todas as linhas que sofrerem uma transformação vai sofrer uma transição de 1.5*/
+}
+/*--------------------------EDITANDO MENU HAMBURGUER---------------------------------------*/
+/*Fazendo o efeito com as linhas do hamburguer(deixar de ser hamburguer para ser um X)*/
+
+.show-menu #line1{  /*transformando a posição da linha*/
+    transform: rotate(45deg) translate(.3rem, .45rem);
+}
+.show-menu #line2{ /*Para sumir a linha do meio*/
+    opacity: 0;
+    visibility: hidden;
+}
+.show-menu #line3{  /*transformando a posição da linha*/
+    transform: rotate(-45deg) translate(.3rem, -.45rem);
 }
 
+/*Editando span "fechar"*/
+.hamburguer span{
+    position: absolute;
+    left: 3rem;
+    height: 2rem;
+    width: 6rem;
+    background-color :#6f0000;
+    color : #fff;
+    font-family : "Josefin Slab";
+    opacity : 0;
+    transition: opacity 1.5s;
+
+    /*centralizando o texto, na horizontal e na vertical*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/*Criando triangulo da caixa de spam(antes da caixa de spam)*/
+.hamburguer span::before{
+    content: "";
+    position: absolute;
+    border-right: .5rem solid #6f0000;
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -1rem;
+}
+/*Aparecer o span apenas quando o menu hamburguer estiver em X e o usuario estiver com o mause em cima do X*/
+.show-menu .hamburguer:hover span{
+    opacity: 1; /*Por padrão é 0 (so muda se tiver show-menu e evento hover acontecendo)*/
+}
+
+/*--------------------------------------------------------------------------------------*/
 
 header{
     width: 100%;
@@ -165,13 +218,13 @@ header{
 .sidebar{
    width: 20rem; /*definindo tamanho*/
    height: 100vh;
-   background-color: #fff; /*definindo cor*/
+   background-color: rgb(255, 255, 255); /*definindo cor*/
    position: fixed;
    top: 0; /*definindo aonde vai ficar*/
    right: -20rem; /*quando começar vai esta fora da tela*/
    transition: all 1s; /*quando abrir ou fehcar menu, adiciona uma transição de 1 seg*/
 }
-.sidebar.show-menu{
+.show-menu .sidebar{
     right: 0; /*quando classe sidebar, tb tiver classe show-menu volta pra tela*/
 }
 
