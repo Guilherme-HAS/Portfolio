@@ -1,20 +1,33 @@
 /*Para lembrar Sempre(O tipo de medida REM usa o tamanho da fonte do <html> )*/
 
+/*----------------------------------------Importações importantes---------------------------------------------------------------*/
 /*Importando fontes do google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap');
 
 /*Importanto caracteres e simbolos especiais*/
-
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
 
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------Utilizidado em varios lugares--------------------------------------------------------------*/
 /*Todos elementos desta pagina vai receber essas ordens (se nao quiser, pode mudar em alguma outra parte do codigo)*/
 *{  
     margin: 0;
     padding: 0;
     list-style: none; /*Tirando todos os pontos de todos LI(Itens de Lista)*/
     text-decoration: none; /*Para tirar o sublinhado dos links da pagina*/
-
 }
+
+/*Criando as variaveis da fonte, e quando quiser usar uma fonte, uso a determinada variavel, para oque quero fazer*/
+:root{
+    --font-primary: "Baloo Da 2", serif;
+    --font-secundary: "Josefin Slab", serif;
+    --font-action:"Mulish", serif;
+    
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------*/
 
 .hamburguer{
     
@@ -49,6 +62,8 @@
 
     transition: transform 1.5s; /* todas as linhas que sofrerem uma transformação vai sofrer uma transição de 1.5*/
 }
+
+
 /*--------------------------EDITANDO MENU HAMBURGUER---------------------------------------*/
 /*Fazendo o efeito com as linhas do hamburguer(deixar de ser hamburguer para ser um X)*/
 
@@ -71,7 +86,7 @@
     width: 6rem;
     background-color :#6f0000;
     color : #fff;
-    font-family : "Josefin Slab";
+    font-family : var(--font-secundary);
     opacity : 0;
     transition: opacity 1.5s;
 
@@ -145,7 +160,7 @@ header{
     /*h1 que está dentro do banner*/
     color: #ffffff;
     font-size: 3.5rem;
-    font-family: 'Baloo Da 2', serif; /*Fonte do google com problema*/
+    font-family: var(--font-primary);
     text-shadow: .3rem .3rem 2px rgb(8, 1, 43); /*Sombra no texto*/
     line-height: 3.5rem; /*Definindo a altura da linha*/
     margin-bottom: 2rem; /*Para espaçar o h1 do paragrafo*/
@@ -157,7 +172,7 @@ header{
 
 .banner p{ 
     /*paragrafo que está dentro  do banner*/
-    font-family: 'Josefin Slab', serif;/*Fonte do google com bug*/
+    font-family: var(--font-secundary);
     color: #ffffff;
     font-size: 2rem;
     text-shadow: .3rem .3rem 2px rgb(8, 1, 43); /*Sombra no texto*/
@@ -169,9 +184,9 @@ header{
 
 .banner button{
     /*Mudando o texto do botão*/
-    font-family: 'Josefin Slab', serif;
+    font-family: var(--font-action);
     color: #fff;
-    font-size: 1.2rem; 
+    font-size: 1rem; 
     text-transform: uppercase;
 
     /*Background com degrade*/
@@ -218,7 +233,7 @@ header{
 .sidebar{
    width: 20rem; /*definindo tamanho*/
    height: 100vh;
-   background-color: rgb(255, 255, 255); /*definindo cor*/
+   background-color: rgb(82, 80, 80); /*definindo cor*/
    position: fixed;
    top: 0; /*definindo aonde vai ficar*/
    right: -20rem; /*quando começar vai esta fora da tela*/
@@ -230,7 +245,7 @@ header{
 
 .menu{ /*Div : menu*/
     position:absolute;
-    top:40%;
+    top:45%;
     left:50%;
     transform: translate(-50%,-50%);/*Organizando os itens exatamente ao meio, tanto em relacao ao eixo X,e Y*/
 }
@@ -241,9 +256,9 @@ header{
 }
 
 .menu-link{ /*Para formatar os links em si*/
-    font-family: "Muly", serif;
-    font-size: 1.5rem;
-    color: #555;
+    font-family: var(--font-action);
+    font-size: 1.8rem;
+    color: rgb(255, 255, 255);
     transition: color 1s; /*sempre que mudar a cor da fonte aplica a transição de 1seg */
 }
 
@@ -264,7 +279,7 @@ header{
     color: rgba(255,255,255,0.8);
     height: 2.5rem;
     width: 2.5rem;
-    font-size: 2.5em; /*Como o incone é uma fonte, aumento ele aumentando o tamanho da*/
+    font-size: 2.5rem; /*Como o incone é uma fonte, aumento ele aumentando o tamanho da*/
     border-radius: 50%;
     
     /*Para posicionar os itens no centro*/
