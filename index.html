@@ -42,7 +42,7 @@
                         <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
                         <li class="menu-item"><a href="#sessao-conhecimento" class="menu-link">Conhecimento</a></li>
                         <li class="menu-item"><a href="#sessao-projetos" class="menu-link">Projetos</a></li>
-                        <li class="menu-item"><a href="#" class="menu-link">Contato</a></li>
+                        <li class="menu-item"><a href="#sessao-contato" class="menu-link">Contato</a></li>
                         <li class="menu-item"><a href="#" class="menu-link">Experiencia(Ideia)</a></li>
                     </ul>
                 </nav>
@@ -137,8 +137,8 @@
                                 todo dejeto de lugares inapropriados para limpar o esgoto da 
                                 cidade.                                 
                             </p>
-                            <button>
-                                <a href="https://www.youtube.com/watch?v=-ZEcOS3mxxE" target="_blank">Veja !!!
+                            <button class="btn">
+                                <a href="https://www.youtube.com/watch?v=-ZEcOS3mxxE" target="_blank" >Veja !!!
                                </a>
                             </button>
                         </div>
@@ -153,8 +153,8 @@
                             <p>
                                 Para resolver o problema no gerenciamento de um café da manha de uma certa empresa, a solução encontrada foi a aplicação (Café da Manhã), onde o usuário consegue se cadastrar e adicionar os alimentos que irá levar, assim não repetindo alimentos que ja são levados por outros usuários, e cada pessoa so pode ter um cadastro (com validação por cpf)
                             </p>
-                            <button>
-                                <a href= "https://guilherme-has.github.io/Guilherme-HAS.CafeDaManha.io  "target="_blank">
+                            <button class="btn">
+                                <a href= "https://guilherme-has.github.io/Guilherme-HAS.CafeDaManha.io  "target="_blank" >
                                     Teste !!!
                                 </a>
                             </button>
@@ -168,8 +168,8 @@
                             <h2>Portfolio</h2>
                             <h3>HTML / CSS / JS </h3>
                             <p>Portfólio do Desenvolvedor Guilherme Henrique, visando mostrar seus conhecimentos, habilidades e projetos ja desenvolvidos pelo mesmo, projeto inicialmente com ideia de aprendizagem e maximização de conhecimentos na área de desenvolvimento web e versionamento de projetos (git / github). </p>
-                            <button>
-                                <a href = "https://github.com/Guilherme-HAS/Portfolio" target = "_blank">
+                            <button class="btn">
+                                <a href = "https://github.com/Guilherme-HAS/Portfolio" target = "_blank" >
                                     Saiba mais !!!
                                 </a>
                             </button>
@@ -177,6 +177,34 @@
                     </div>
                 </div>
             </section>
+
+            <section id = "sessao-contato" class="sessao-contato">
+                <div class="contato-wrapper">
+                    <div class="contato-left"> </div> <!--Apenas para a imagem--> 
+                    <div class="contato-right">
+                        <h1>Contato</h1>
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="field" id ="nome">
+                                <label for= "nome" class="field-label">Nome</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="field" id ="email">
+                                <label for= "nome" class="field-label">E-mail</label>
+                            </div>
+                            <div class="input-group">
+                                <textarea class ="field" id ="mensagem"></textarea>
+                                <label for= "nome"class="field-label">Mensagem</label>
+                            </div>
+                            <button type="submit" class= "btn btn-submit" onclick="alert('Olá usuário, infelizmente não estou funcionando :/, mas quem sabe da proxima vez ja tenha resolvido esse bug')">
+                                Enviar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+
         </div>
     </div>
 </body>
