@@ -24,7 +24,7 @@
 :root{
     --font-primary: "Baloo Da 2", serif;
     --font-secundary: "Josefin Slab", serif;
-    --font-action:"Mulish", serif;
+    --font-action: "Mulish", serif;
     
 }
 
@@ -239,6 +239,7 @@ header{
    top: 0; /*definindo aonde vai ficar*/
    right: -20rem; /*quando começar vai esta fora da tela*/
    transition: all 1s; /*quando abrir ou fehcar menu, adiciona uma transição de 1 seg*/
+   z-index: 2;
 }
 .show-menu .sidebar{
     right: 0; /*quando classe sidebar, tb tiver classe show-menu volta pra tela*/
@@ -340,6 +341,9 @@ header{
     display: flex;
     align-items: center; /*Alinhamento Vertical (no centro)*/
     justify-content: center; /*Alinhamento Horizontal (no centro)*/
+    margin-top: 5rem;
+    margin-bottom: 1.5rem;
+    
 }
 
 .sessao-header h1{
@@ -383,4 +387,116 @@ header{
 .conhecimeto-img-wrapper img{
     object-fit: cover;
     width: 100%;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+/*------------------------------Seçao Projetos-------------------------------------------------------------*/
+/*Editando a sessão inteira*/
+.projetos{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+/*editando cada card*/
+.card{
+    /*definindo tamanho*/
+    width: 20rem;
+    height: 30rem;
+    position: relative;
+}
+
+/*editando a embalagem de imagens de cada card*/
+.card-img-wrapper{
+    width: 100%;
+    height: 100%; 
+    border-radius: 1.5rem;
+    /*Colocando uma cor de fundo p/ que com a opacidade da imagem, nao fique uma imagem lavada*/
+    background: #262626;
+    
+}
+
+/*editando a imagem*/
+.card-img-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+    opacity: .8;
+    transition: opacity .5s; 
+}
+
+/*Quando o mause passar por cima do card imagem vai receber uma opacidade*/
+.card:hover .card-img-wrapper img{
+    opacity: .2;
+}
+
+/*editando informações do card (projetos)*/
+.card-info{
+    position: absolute;
+    bottom: 0;
+    padding: 2rem;
+    text-shadow: 0.3 0.1rem 0.3rem rgba(0, 0, 0, .6);
+    opacity: 0;
+    visibility:hidden;
+    transition: all .5s;
+}
+/*editando texto nome do projeto (h2)*/
+.card-info h2{
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-weight: bolder;
+    color :#eee;
+}
+
+/*editando texto tecnologia usada(h3)*/
+.card-info h3{
+    font-family: var(--font-action);
+    font-weight: bolder;
+    color: #9b0000;
+    margin-bottom: 1.5rem;
+}
+
+/*editando texto sobre projeto (p)*/
+.card-info p{
+    font-family: var(--font-secundary);
+    color: #eee;
+    font-weight: 400;
+    width: 80%;
+    margin-bottom: 2rem;
+}
+
+/*editando botao saiba mais (button)*/
+.card-info button{
+    
+    font-family: var(--font-action);
+    font-size: 1rem;
+    text-transform: uppercase;
+    
+    width: 8rem;
+    height: 2.5rem;
+    border:none;
+    border-radius: .5rem;
+    box-shadow: 0 .1rem .8rem rgba(0, 0, 0, .4);
+    cursor:pointer;
+    
+    /*mesmo degrade que usei no botão do home*/
+    background: #200122;
+    background: -webkit-linear-gradient(to right, #6f0000, #200122);  
+    background: linear-gradient(to right, #6f0000, #200122); 
+}
+
+/*Quando tiver passar o mause em cima do card(projeto)*/
+.card:hover .card-info{
+    bottom: 2rem;
+    opacity: 1;
+    visibility: visible;
+    
+}
+
+.card-info a{
+    color: #fff;
+    font-size: 1rem;
+    font-family: var(--font-action);
 }
