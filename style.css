@@ -17,7 +17,7 @@
     margin: 0;
     padding: 0;
     list-style: none; /*Tirando todos os pontos de todos LI(Itens de Lista)*/
-    text-decoration: none; /*Para tirar o sublinhado dos links da pagina*/
+    text-decoration: none; /*Para tirar o sublinhado dos links da pagina*/ 
 }
 
 /*Criando as variaveis da fonte, e quando quiser usar uma fonte, uso a determinada variavel, para oque quero fazer*/
@@ -25,7 +25,10 @@
     --font-primary: "Baloo Da 2", serif;
     --font-secundary: "Josefin Slab", serif;
     --font-action: "Mulish", serif;
-    
+}
+/*Suavizando a navegação quando usar o navbar para ir em alguma sessão*/
+html{
+    scroll-behavior: smooth;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
@@ -614,3 +617,69 @@ header{
     height: 2rem;
 }
 
+/*----------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------FOOTER----------------------------------------------------------*/
+/*Editando o Rodapé inteiro*/
+footer{
+    width: 100%;
+    height: 7rem;
+    background-color: #17181b;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Editando o conteudo do rodapé*/
+.footer-content{
+    width:60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Editando o texto do rodape (paragrafo P)*/
+.footer-content p{
+    font-family: var(--font-secundary);
+    color:#a7a7a7;
+    font-size: 1.2rem;
+}
+
+/*Editando os incones das redes sociais*/
+.social-list a{
+    margin:0 2rem;
+    color:#a7a7a7;
+    font-size: 1.5rem;
+}
+
+/*Ajustando a lista pra deixar todos os incones lado a lado*/
+.social-list ul{
+    display: flex;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------LINK P/ TOPO-------------------------------------------------*/
+#link-topo{
+    /*Definindo aonde fica*/
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    
+    /*Definindo tamanho*/
+    width: 3rem;
+    height: 3rem;
+    font-size:3rem;
+    
+    /*Definindo cor e borda*/
+    border-radius:50%;
+    color: #ffffff;
+    
+
+    /*Mesmo background do degradê botão saiba mais*/
+    background: #200122;
+    background: -webkit-linear-gradient(to right, #6f0000, #200122);  
+    background: linear-gradient(to right, #6f0000, #200122);
+
+    /*Colocando seta no meio do background*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
